@@ -1,0 +1,23 @@
+﻿{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "UnrealToml",
+	"Description": "",
+	"Category": "Other",
+	"CreatedBy": "Cyrus Lin",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "UnrealToml",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

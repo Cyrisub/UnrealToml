@@ -1,0 +1,19 @@
+# Unreal Engine Plugin
+/Binaries/
+/Intermediate/
+/Saved/
+/Build/
+
+# Visual Studio Code files
+.vscode/
+*.code-workspace
+
+# Cline Cache
+.clineignore
+/memory-bank/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
