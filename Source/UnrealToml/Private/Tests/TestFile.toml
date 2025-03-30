@@ -1,0 +1,20 @@
+# This is a test TOML file
+title = "Test Config"
+version = 1
+
+[settings]
+debug = true
+max_retries = 3
+
+[database]
+host = "localhost"
+port = 5432
+enabled = true
+
+[[servers]]
+name = "primary"
+ip = "192.168.1.1"
+
+[[servers]]
+name = "backup"
+ip = "192.168.1.2"
