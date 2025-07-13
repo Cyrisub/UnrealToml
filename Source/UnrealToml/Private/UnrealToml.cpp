@@ -5,10 +5,6 @@
 
 DEFINE_LOG_CATEGORY_STATIC(LogToml, Log, All);
 
-#define LOCTEXT_NAMESPACE "FUnrealTomlModule"
-
-#undef LOCTEXT_NAMESPACE
-
 IMPLEMENT_MODULE(FUnrealTomlModule, UnrealToml)
 
 #define TOML_EXCEPTIONS 0
@@ -27,11 +23,11 @@ FTomlTable::FTomlTable()
 
 void FTomlTable::Init()
 {
-    Impl = MakeUnique<FTomlFileImpl>();
+    Impl = new FTomlFileImpl{};
 }
 
 FTomlTable::FTomlTable(const FTomlTable& Other)
-    : Impl(MakeUnique<FTomlFileImpl>())
+    : Impl(new FTomlFileImpl{})
 {
     if (Other.Impl)
     {
@@ -45,7 +41,7 @@ FTomlTable& FTomlTable::operator=(const FTomlTable& Other)
     {
         if (!Impl)
         {
-            Impl = MakeUnique<FTomlFileImpl>();
+            Impl = new FTomlFileImpl{};
         }
         
         if (Other.Impl)
@@ -60,9 +56,14 @@ FTomlTable& FTomlTable::operator=(const FTomlTable& Other)
     return *this;
 }
 
+FTomlTable::~FTomlTable()
+{
+    delete Impl;
+}
+
 bool FTomlTable::IsValid() const
 {
-    return Impl.IsValid();
+    return Impl != nullptr;
 }
 
 bool FTomlTable::IsEmpty() const

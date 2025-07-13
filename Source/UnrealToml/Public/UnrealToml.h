@@ -29,7 +29,7 @@ namespace Toml
         CStringType<T>;
 }
 
-class FTomlTable final
+class UNREALTOML_API FTomlTable final
 {
 public:
     // Factory methods - only way to create instances from outside
@@ -39,7 +39,7 @@ public:
     // Allow copying
     FTomlTable(const FTomlTable& Other);
     FTomlTable& operator=(const FTomlTable& Other);
-    ~FTomlTable() = default;
+    ~FTomlTable();
 
     bool IsValid() const;
     bool IsEmpty() const;
@@ -97,5 +97,5 @@ private:
     FTomlTable();
     void Init();
     
-    TUniquePtr<FTomlFileImpl> Impl;
+    FTomlFileImpl* Impl;
 };
