@@ -322,3 +322,7 @@ FTomlTable FTomlTable::GetTableAtPath(const FString& Path) const
     Result.Impl->tbl = MoveTemp(*table);
     return Result;
 }
+
+template TArray<int32> FTomlTable::GetHomoArray<int32>(const FString& Key) const;
+template TArray<int64> FTomlTable::GetHomoArray<int64>(const FString& Key) const;
+template TArray<FString> FTomlTable::GetHomoArray<FString>(const FString& Key) const;
